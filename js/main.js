@@ -1,0 +1,67 @@
+// const poppup_message = document.querySelector('.poppup_message');
+// poppup_message.classList.add('active');
+// const timeOut = setTimeout(() => {
+//   poppup_message.classList.remove('active');
+// }, 2000);
+// clearInterval(timeOut)
+
+
+// menu bar icon 
+const mobile_menu_container = document.querySelector('.mobile_menu_container')
+const mobile_menu_wrapper = document.querySelector('.mobile_menu_wrapper')
+const clickx= document.getElementById('pencet');
+
+clickx.addEventListener('click', () =>{
+  clickx.classList.toggle('Diam');
+  mobile_menu_container.classList.toggle('toggle');
+  mobile_menu_wrapper.classList.toggle('toggle');
+});
+
+
+
+// header srcoll show header section
+const headerScroll = document.querySelector('.header_section');
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 250) {
+    headerScroll.classList.add('is_sticky');
+  }else {
+    headerScroll.classList.remove('is_sticky');
+  }
+});
+
+
+
+// current page active js code 
+const nav_links = document.querySelectorAll('.nav_links a');
+for(let i = 0; i<nav_links.length; i++) {
+
+  nav_links[i].addEventListener('click', (e) => {
+
+    nav_links.forEach(link => {
+      if(link.className == 'active') {
+        link.classList.remove('active');
+      }
+    });
+    nav_links[i].classList.add('active');
+    // test 
+    clickx.classList.toggle('Diam');
+    mobile_menu_container.classList.toggle('toggle');
+    mobile_menu_wrapper.classList.toggle('toggle');
+  })
+}
+
+// copy text js code 
+const copyButton = document.getElementById("copy_email");
+
+const copyText = (e) => {
+  window.getSelection().selectAllChildren(copyButton);
+  document.execCommand("copy");
+  e.target.setAttribute("tooltip", "Copied! ✅");
+};
+
+const resetTooltip = (e) => {
+  e.target.setAttribute("tooltip", "Copy to clipboard");
+};
+
+copyButton.addEventListener("click", (e) => copyText(e));
+copyButton.addEventListener("mouseover", (e) => resetTooltip(e));
