@@ -301,7 +301,10 @@ body {
   text-transform: capitalize;
 }
 
-.mobile_nav_item a.active {
+/* .mobile_nav_item a.active {
+  color: tomato;
+} */
+a.active {
   color: tomato;
 }
 
@@ -383,7 +386,16 @@ body {
   position: relative;
 }
 
-.nav_item a.active {
+/* .nav_item a.active {
+  color: tomato;
+  opacity: 1;
+  transition: all 0.3s ease;
+  transform-origin: left;
+  -webkit-transform-origin: left;
+  -webkit-transition: all 0.3s ease;
+  position: relative;
+} */
+.nav_links a.active {
   color: tomato;
   opacity: 1;
   transition: all 0.3s ease;
@@ -392,6 +404,7 @@ body {
   -webkit-transition: all 0.3s ease;
   position: relative;
 }
+
 
 .nav_item a.active::before {
   position: absolute;
